@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIRUPAKARAN PORTFOLIO</title>
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #eef6ff;
+        color: #222;
+       }
+        
+       /*navbar*/
+      nav {
+        background: linear-gradient(
+            270deg,
+            #0f172a,
+            #2563eb,
+            #7c3aed,
+            #0ea5e9
+
+        );
+      background-size: 400% 400%;
+      animation: gradientmove 8s ease infinite;
+
+        padding: 15px 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0 0 20px 20px;
+        box-sizing: 0 8px 125px rgba(37,99,235,0025);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+      }
+
+      @keyframes gradientMove{
+        0%{
+            background-position: 0% 50%;
+        }
+       50%{
+        background-position: 100% 50%;
+       }
+
+       100%{
+        background-position: 0% 50%;
+       }
+
+      }
+      .logo{
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+      }
+      .slogan{
+        font-size: 11px;
+        color:#dde7ff;
+        margin-top: 3px;
+      }
+   .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .brand img {
+            width: 100px;
+            height: auto;
+        }
+    .brand span {
+            font-size: 20px;
+            color: beige;
+            margin-top: 20px;
+            font-weight: 500;
+             }
+
+
+
+      .nav-link{
+        display: flex;
+        gap: 10px;
+        list-style: none;
+     }
+     .nav-link a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+     }
+   .nav-link a:hover{
+    background: rgba(146, 49, 49, 0.18);
+    transform: translateX(-2px);
+    box-shadow: 0 5px 15px rgba (0,0,0,0.154);
+   }
+
+   .nav-link a:active{
+    background: black;
+   }
+      /*hero*/
+      .hero{
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        padding: 40px 20px;
+      }
+    .hero-content h1 {
+        font-size: 50px;
+        margin-bottom: 25px;
+    }
+    .hero-content h1 span{
+        color: #2563eb;
+    }
+    .hero-content p{
+        font-size: 20px;
+        color:#2563eb ;
+        margin-bottom: 25px;
+    }
+    .hero-content p span{
+        color: #222;
+    }
+   .btn{
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 5px;
+   }
+       
+   .btn:hover{
+    background-color: darkcyan 
+ }
+    /*section*/
+    section{
+        padding: 70px 8%;
+    }
+     .section-title{
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+     }  
+
+   /* about*/
+   .about{
+    background-color: lightblue;
+    text-align: center;
+   }
+   .about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #555;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+    /*skills*/
+    .skills{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 70px 8%;
+    }
+
+    .skill {
+        background-color: lightblue;
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0,0.12);
+        font-size: 18px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+ .skill:hover{
+    transform: translateY(-5PX);
+    background-color: #2563eb;
+    color: aliceblue;
+    cursor: pointer;
+ }
+ /* =========================
+   PREMIUM PROJECT SECTION
+   ========================= */
+
+#projects {
+    padding: 90px 8%;
+    background: #f4f7fb;
+}
+
+#projects .section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px;
+    color: #111827;
+}
+
+/* Project container */
+
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+/* Project card */
+
+.project {
+    position: relative;
+
+    width: 340px;
+    min-height: 330px;
+
+    padding: 32px 35px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+   
+
+    transition: 0.3s ease;
+}
+
+/* Decorative top line */
+
+.project::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+}
+
+/* Decorative circle */
+
+.project::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.06);
+
+    right: -40px;
+    bottom: -40px;
+
+    transition: 0.35s;
+}
+
+/* Hover */
+
+.project:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.16);
+
+    border-color: #bfdbfe;
+}
+
+.project:hover::after {
+    transform: scale(1.5);
+}
+
+
+/* Project number */
+
+.project-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Project title */
+
+.project h3 {
+    font-size: 24px;
+
+    color: #2563eb;
+
+    margin-bottom: 15px;
+}
+
+
+/* Description */
+
+.project p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+
+/* Technology */
+
+.project-tech {
+    font-size: 13px !important;
+
+    color: #7c3aed !important;
+
+    font-weight: 600;
+}
+
+
+/* View button */
+
+.project-btn {
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+   .contact{
+     text-align: center;
+     background-color: #ffffff;
+   }
+      .contact p{
+        margin: 10px;
+      }
+
+<!--footer-->
+  footer{
+    background-color: #111827;
+    color: #faf9f6;
+    text-align: center;
+    padding: 20px;
+    
+  }
+
+ 
+    </style>
+</head>
+<body>
+    <!--nav section-->
+    <nav class="navbar">
+        <div class="brand">
+
+            <img src="sute look.jpeg" alt="kirupa photo">
+            <div class="slogan">Design . Develop .Create</div>
+            
+            <span><b>VILLAGE CREATIONS</b></span>
+        </div>
+        
+        <div>
+        <ul class="nav-link">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="skills">skills</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="contact">contact</a></li>
+
+        </ul></div>
+    </nav>
+
+    <!--hero section-->
+    <section class="hero" id="home">
+         <div class="hero-content">
+            <h1>HI I'M <span> KIRUPAKARAN SELVAM</span></h1>
+            
+            <p>
+                <b>UI/UX DESIGNER</b> & <span><b>FRONT END DEVELOPER</b></span>
+                
+            </p>
+            
+            <a href="project" class="btn">view my profile</a> <br>
+            <a href="contact" class="btn">contact me</a>
+         </div>
+    </section>
+   
+    <!--ABOUT-->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            i am a passionate UI/UX designer and front<br> end developer who enjoys creating modern,<br> user-friendly and responsive digital <br>experiences. I have a strong interest in <br> website design, mobile application design,<br> and web development.I continuously learn <br>and practice new technologies to improve my <br> skills and turn ideas into functional digital <br> products. My goal is to create simple,<br> creative, and meaningful solutions that <br> provide a great user experience.    
+        </p>
+    </section>
+     
+    <!--skills-->
+    <section id="skills">
+        <h2 class="section-title"> my skills</h2>
+        <div class="skills">
+         <div class="skill">HTML</div>
+         <div class="skill">CSS</div>
+         <div class="skill"> JavaScript</div>
+          <div class="skill"> Figma</div>
+           <div class="skill"> UI/UX Design</div>
+        </div>
+    </section>
+
+    <!--projects-->
+
+    <section id="projects">
+        <h2 class="section-title">my projects
+        </h2>
+        <div class="projects">
+            <div class="project"1>
+            <h3>SUBA AGRO</h3>
+            <p1>
+                agricultural products <br> website and mobile application UI design.
+            </p1><br>
+            <br>
+            <a href="#" class="project-btn">View Project</a>
+        </div>
+        <div class="project "2>
+            <h3>ANBU TEA STALL</h3>
+            <P2>
+                Modern tea shop branding and digital application concept.
+
+            </P2><br>
+            <br>
+            <br>
+              <a href="#" class="project-btn">View Project</a>
+        </div>
+        <div class="project "3>
+            <h3>SUBHAM MATRIMONIAL</h3>
+            <P3>Subham Matrimonial is a modern and user-friendly matrimonial website designed to help individuals find meaningful life partners. The platform provides a simple and secure experience for creating profiles, searching for suitable matches, viewing profile details, and connecting with potential partners. The design focuses on clean layouts, easy navigation, responsive design, and a comfortable user experience across mobile and desktop devices.  </P3><br>
+            <br>
+            <br>
+            <a href="#" class="project-btn">View Project</a>
+        </div>
+
+           <div class="project">
+
+            <h3>Nivisha Agency</h3>
+
+            <p>
+                Nivisha Agency Products Billing Software is a
+                simple business billing system designed to manage
+                products, quantities, prices, customer bills,
+                and total sales in an organized way.
+            </p>
+
+            
+            </p>
+
+            <a href="#" class="project-btn">
+                View Project
+            </a>
+
+        </div>
+
+         </div>
+    </section>
+
+    <!--contact-->
+     <section class="contact" id="contact">
+        <h2 class="section--">Contact Me</h2>
+        <p>Email : kiruparoyal1995@gmail.com</p>
+        <p>Phone :+91 8838350300</p>
+        <p>Tamil Nadu,India</p>
+     </section>
+     <!--Footer-->
+     <footer> 
+        <p>© 2026 kirupakaran. All Right Reserved </p>
+     </footer>
+     <script src="script.js"></script>
+</body>
+</html>
