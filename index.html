@@ -208,39 +208,113 @@
 }
 
 /* Project container */
-
+/* PROJECT CONTAINER ALIGNMENT */
 .projects {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
     align-items: stretch;
-    flex-wrap: wrap;
-    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    box-sizing: border-box;
 }
 
-/* Project card */
-
+/* PROJECT CARD */
 .project {
-    position: relative;
-
-    width: 340px;
-    min-height: 330px;
-
-    padding: 32px 35px;
-
-    background: rgba(255, 255, 255, 0.95);
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.08);
-
-   
-
-    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 28px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e5eaf2;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(15, 40, 80, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(15, 40, 80, 0.14);
+}
+
+/* PROJECT TITLE */
+.project h3 {
+    width: 100%;
+    margin: 0 0 15px;
+    color: #1746a2;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+/* PROJECT DESCRIPTION */
+.project p {
+    width: 100%;
+    margin: 0 0 22px;
+    color: #555f70;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* PROJECT BUTTON */
+.project .project-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1688e8, #3155d9);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.project .project-btn:hover {
+    background: linear-gradient(135deg, #3155d9, #1688e8);
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .project {
+        padding: 22px;
+    }
+
+    .project h3 {
+        font-size: 20px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .projects {
+        padding: 15px 10px;
+    }
+
+    .project {
+        padding: 18px;
+    }
+
+    .project .project-btn {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
 /* Decorative top line */
 
 .project::before {
@@ -481,10 +555,11 @@
             <p1>
                 agricultural products <br> website and mobile application UI design.
             </p1><br>
+            <br><br>
             <br>
-            <a href="#" class="project-btn">View Project</a>
+            <a href="https://kiruparoyal1995-byte.github.io/suba_agro_products/" class="project-btn">View Project</a>
         </div>
-        <div class="project "2>
+        <div class="project">
             <h3>ANBU TEA STALL</h3>
             <P2>
                 Modern tea shop branding and digital application concept.
@@ -492,9 +567,9 @@
             </P2><br>
             <br>
             <br>
-              <a href="#" class="project-btn">View Project</a>
+              <a href="https://kiruparoyal1995-byte.github.io/anbu-tea-stall-website/" class="project-btn">View Project</a>
         </div>
-        <div class="project "3>
+        <div class="project">
             <h3>SUBHAM MATRIMONIAL</h3>
             <P3>Subham Matrimonial is a modern and user-friendly matrimonial website designed to help individuals find meaningful life partners. The platform provides a simple and secure experience for creating profiles, searching for suitable matches, viewing profile details, and connecting with potential partners. The design focuses on clean layouts, easy navigation, responsive design, and a comfortable user experience across mobile and desktop devices.  </P3><br>
             <br>
@@ -512,6 +587,8 @@
                 products, quantities, prices, customer bills,
                 and total sales in an organized way.
             </p>
+
+
 
             
             
