@@ -15,6 +15,33 @@
         background-color: #eef6ff;
         color: #222;
        }
+
+       
+/* Circular profile photo */
+.profile-photo,
+.profile-image,
+.hero img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: 4px solid #ffffff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Responsive size for mobile */
+@media (max-width: 600px) {
+    .profile-photo,
+    .profile-image,
+    .hero img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
         
        /*navbar*/
       nav {
@@ -143,6 +170,48 @@
    .btn:hover{
     background-color: darkcyan 
  }
+
+<!--hersectionaddition-->
+
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    min-width: 220px;
+    padding: 16px 25px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1688e8, #3155d9);
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(49, 85, 217, 0.25);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+
+
     /*section*/
     section{
         padding: 70px 8%;
@@ -191,290 +260,223 @@
     color: aliceblue;
     cursor: pointer;
  }
- /* =========================
-   PREMIUM PROJECT SECTION
-   ========================= */
+
+/* ===== PROJECT SECTION ALIGNMENT FIX ===== */
 
 #projects {
-    padding: 90px 8%;
-    background: #f4f7fb;
-}
-
-#projects .section-title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-    color: #111827;
-}
-
-/* Project container */
-/* PROJECT CONTAINER ALIGNMENT */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    padding: 70px 6%;
     box-sizing: border-box;
 }
 
-/* PROJECT CARD */
-.project {
+#projects .projects {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* Equal project containers */
+#projects .project {
+    width: 100%;
+    min-width: 0;
+    min-height: 300px;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    min-width: 0;
-    height: 100%;
-    padding: 28px;
-    box-sizing: border-box;
     background: #ffffff;
-    border: 1px solid #e5eaf2;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(15, 40, 80, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #dce7f5;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(20, 60, 120, 0.08);
 }
 
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 30px rgba(15, 40, 80, 0.14);
-}
-
-/* PROJECT TITLE */
-.project h3 {
+/* Consistent heading alignment */
+#projects .project h3 {
     width: 100%;
-    margin: 0 0 15px;
-    color: #1746a2;
-    font-size: 22px;
-    line-height: 1.4;
+    margin: 0 0 18px;
+    padding: 0;
+    color: #1673c9;
+    font-size: 26px;
+    line-height: 1.35;
+    text-align: left;
 }
 
-/* PROJECT DESCRIPTION */
-.project p {
+/* Paragraph spacing */
+#projects .project p {
     width: 100%;
-    margin: 0 0 22px;
-    color: #555f70;
-    font-size: 15px;
+    margin: 0 0 28px;
+    padding: 0;
+    color: #4b5563;
+    font-size: 16px;
     line-height: 1.8;
+    text-align: left;
+}
+
+/* Button position and spacing */
+#projects .project a,
+#projects .project button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+    padding: 13px 26px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #35a9e8, #2860d8);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover effect */
+#projects .project a:hover,
+#projects .project button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 96, 216, 0.22);
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+    #projects {
+        padding: 45px 18px;
+    }
+
+    #projects .projects {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    #projects .project {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    #projects .project h3 {
+        font-size: 22px;
+    }
+
+    #projects .project p {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    #projects .project a,
+    #projects .project button {
+        margin-top: 0;
+    }
+}
+
+
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 70px 20px;
+    text-align: center;
+    background: #f4f7fc;
+}
+
+.contact-section h2 {
+    font-size: 38px;
+    color: #173b83;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.contact-item {
+    padding: 30px 20px;
+    background: #ffffff;
+    border: 1px solid #e4eaf5;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
     overflow-wrap: anywhere;
 }
 
-/* PROJECT BUTTON */
-.project .project-btn {
+.contact-item:hover {
+    transform: translateY(-6px);
+}
+
+.contact-icon {
     display: inline-block;
-    margin-top: auto;
-    padding: 12px 25px;
-    border: none;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.contact-item h3 {
+    color: #173b83;
+    margin-bottom: 12px;
+}
+
+.contact-item a {
+    color: #3155d9;
+    text-decoration: none;
+    line-height: 1.7;
+}
+
+.contact-item a:hover {
+    color: #e34d8c;
+    text-decoration: underline;
+}
+
+.contact-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 13px 28px;
     border-radius: 30px;
     background: linear-gradient(135deg, #1688e8, #3155d9);
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.project .project-btn:hover {
-    background: linear-gradient(135deg, #3155d9, #1688e8);
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(49, 85, 217, 0.25);
 }
 
-/* TABLET AND MOBILE */
 @media (max-width: 768px) {
-    .projects {
+    .contact-container {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 20px 15px;
     }
 
-    .project {
-        padding: 22px;
+    .contact-section {
+        padding: 45px 15px;
     }
 
-    .project h3 {
-        font-size: 20px;
+    .contact-section h2 {
+        font-size: 30px;
     }
 
-    .project p {
-        font-size: 14px;
+    .contact-item {
+        padding: 25px 15px;
     }
 }
-
-@media (max-width: 400px) {
-    .projects {
-        padding: 15px 10px;
-    }
-
-    .project {
-        padding: 18px;
-    }
-
-    .project .project-btn {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
-/* Decorative top line */
-
-.project::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 5px;
-
-    background: linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-}
-
-/* Decorative circle */
-
-.project::after {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    border-radius: 50%;
-
-    background: rgba(37, 99, 235, 0.06);
-
-    right: -40px;
-    bottom: -40px;
-
-    transition: 0.35s;
-}
-
-/* Hover */
-
-.project:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 45px rgba(37, 99, 235, 0.16);
-
-    border-color: #bfdbfe;
-}
-
-.project:hover::after {
-    transform: scale(1.5);
-}
-
-
-/* Project number */
-
-.project-number {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    margin-bottom: 20px;
-
-    border-radius: 50%;
-
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: bold;
-}
-
-
-/* Project title */
-
-.project h3 {
-    font-size: 24px;
-
-    color: #2563eb;
-
-    margin-bottom: 15px;
-}
-
-
-/* Description */
-
-.project p {
-    color: #64748b;
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-
-    text-align: left;
-}
-
-
-/* Technology */
-
-.project-tech {
-    font-size: 13px !important;
-
-    color: #7c3aed !important;
-
-    font-weight: 600;
-}
-
-
-/* View button */
-
-.project-btn {
-    display: inline-block;
-
-    padding: 11px 22px;
-
-    border-radius: 25px;
-
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.project-btn:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.25);
-}
-
-   .contact{
-     text-align: center;
-     background-color: #ffffff;
-   }
-      .contact p{
-        margin: 10px;
-      }
 
 <!--footer-->
   footer{
@@ -493,7 +495,7 @@
     <nav class="navbar">
         <div class="brand">
 
-            <img src="sute look.jpeg" alt="kirupa photo">
+            <img src="sute look.jpeg" class="profile-photo"  alt="kirupa photo">
             <div class="slogan">Design . Develop .Create</div>
             
             <span><b>VILLAGE CREATIONS</b></span>
@@ -520,18 +522,35 @@
                 
             </p>
             
-            <a href="project" class="btn">view my profile</a> <br>
-            <a href="contact" class="btn">contact me</a>
+          
+            
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a UI/UX Designer and Front-End Developer
+        passionate about creating responsive and user-friendly websites.
+    </p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    
+    <p>
+        
+        <a href="mailto:kiruparoyal1995@gmail.com" class="btn">
+            EMAIL
+        </a>
+    </p>
+    <p>
+    
+        <a href="tel:+918838350300" class="btn">CONTACT</a>
+    </p>
+</section>
+
          </div>
     </section>
    
-    <!--ABOUT-->
-    <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
-        <p>
-            i am a passionate UI/UX designer and front<br> end developer who enjoys creating modern,<br> user-friendly and responsive digital <br>experiences. I have a strong interest in <br> website design, mobile application design,<br> and web development.I continuously learn <br>and practice new technologies to improve my <br> skills and turn ideas into functional digital <br> products. My goal is to create simple,<br> creative, and meaningful solutions that <br> provide a great user experience.    
-        </p>
-    </section>
      
     <!--skills-->
     <section id="skills">
@@ -552,12 +571,10 @@
         <div class="projects">
             <div class="project"1>
             <h3>SUBA AGRO</h3>
-            <p1>
+            <p>
                 agricultural products <br> website and mobile application UI design.
-            </p1><br>
-            <br><br>
-            <br>
-            <a href="https://kiruparoyal1995-byte.github.io/suba_agro_products/" class="project-btn">View Project</a>
+            </p>
+            <a href="https://kiruparoyal1995-byte.github.io/suba_agro_products/" class="project-btn" target="blank">View Project</a>
         </div>
         <div class="project">
             <h3>ANBU TEA STALL</h3>
@@ -567,19 +584,18 @@
             </P2><br>
             <br>
             <br>
-              <a href="https://kiruparoyal1995-byte.github.io/anbu-tea-stall-website/" class="project-btn">View Project</a>
+              <a href="https://kiruparoyal1995-byte.github.io/anbu-tea-stall-website/" class="project-btn"  target="blank">View Project</a>
         </div>
         <div class="project">
             <h3>SUBHAM MATRIMONIAL</h3>
-            <P3>Subham Matrimonial is a modern and user-friendly matrimonial website designed to help individuals find meaningful life partners. The platform provides a simple and secure experience for creating profiles, searching for suitable matches, viewing profile details, and connecting with potential partners. The design focuses on clean layouts, easy navigation, responsive design, and a comfortable user experience across mobile and desktop devices.  </P3><br>
-            <br>
-            <br>
-            <a href="https://kiruparoyal1995-byte.github.io/subham-matrimonial/" class="project-btn" target="_blank">View Project</a>
+            <P>Subham Matrimonial is a modern and user-friendly matrimonial website designed to help individuals find meaningful life partners. The platform provides a simple and secure experience for creating profiles, searching for suitable matches, viewing profile details, and connecting with potential partners. The design focuses on clean layouts, easy navigation, responsive design, and a comfortable user experience across mobile and desktop devices.  </P>
+        
+            <a href="https://kiruparoyal1995-byte.github.io/subham-matrimonial/" class="project-btn" target="blank">View Project</a>
         </div>
 
            <div class="project">
 
-            <h3>Nivisha Agency</h3>
+            <h3>NIVISHA AGENCY</h3>
 
             <p>
                 Nivisha Agency Products Billing Software is a
@@ -588,27 +604,71 @@
                 and total sales in an organized way.
             </p>
 
-
-
-            
-            
-
             <a href=" https://kiruparoyal1995-byte.github.io/nivshaagency-app/" class="project-btn" target="_blank">
                 View Project
             </a>
 
         </div>
-
+ <div class="project">
+            <h3>NAGAI DRY FISH SHOP</h3>
+            <P>
+               Nagai Dry Fish Shop is an e-commerce website designed to showcase and sell a variety of dried fish products. The website provides customers with a simple and convenient shopping experience through a clean, responsive design and Tamil-friendly interface.
+            </P>
+            
+              <a href=" https://kiruparoyal1995-byte.github.io/dry_fish_shop_nagai/" class="project-btn"  target="blank">View Project</a>
+        </div>
          </div>
     </section>
 
     <!--contact-->
-     <section class="contact" id="contact">
-        <h2 class="section--">Contact Me</h2>
-        <p>Email : kiruparoyal1995@gmail.com</p>
-        <p>Phone :+91 8838350300</p>
-        <p>Tamil Nadu,India</p>
-     </section>
+
+<section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <h3>Email</h3>
+            <a href="mailto:kiruparoyal1995@gmail.com">
+                kiruparoyal1995@gmail.com
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <h3>Phone</h3>
+            <a href="tel:+918838350300">
+                +91 8838350300
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <h3>Location</h3>
+            <a href="https://www.google.com/maps/search/?api=1&query=Tamil+Nadu%2C+India"
+               target="_blank"
+               rel="noopener noreferrer">
+                 Vedaraniyam ,Tamil Nadu, India
+            </a>
+        </div>
+
+        <div class="contact-actions">
+            <a class="contact-btn"
+               href="mailto:kiruparoyal1995@gmail.com">
+                Email Me
+            </a>
+
+            <a class="contact-btn"
+               href="tel:+918838350300">
+                Call Me
+            </a>
+        </div>
+
+ 
+    </div>
+</section>
+
      <!--Footer-->
      <footer> 
         <p>© 2026 kirupakaran. All Right Reserved </p>
